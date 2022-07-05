@@ -26,4 +26,8 @@ public class Author {
     @Column(name = "author_name", nullable = false)
     private String name;
 
+    /*
+      По заданию нам надо найти автора и все его книги. Но Автор не ссылается на книги. Почему?
+     */
+
 }

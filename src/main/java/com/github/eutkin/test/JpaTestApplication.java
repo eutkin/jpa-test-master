@@ -29,7 +29,11 @@ public class JpaTestApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-
+        /*
+            1) Два запроса вместо одного.
+            2) Два репозитория вместо одного
+            3) Недостаточно понимания как использовать JPA и делать запросы в БД.
+         */
         final Author author = authorRepository.findAuthorByName("А.С. Пушкин");
         System.out.println(bookRepository.findBooksByAuthor(author));
     }

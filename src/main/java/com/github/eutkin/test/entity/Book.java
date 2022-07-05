@@ -17,6 +17,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @ToString
+// Тут ни одного final поля нет. Что дает эта аннотация? Аннотации ради аннотаций это плохо.
 @RequiredArgsConstructor
 @Table(name = "books")
 public class Book {
@@ -27,6 +28,9 @@ public class Book {
     @Column(name = "book_name", nullable = false)
     private String name;
 
+    /*
+     * Зачем нужна ссылка на автора? Мы должны по заданию найти автора и все его книги, а не все книги и их авторов.
+     */
     @ManyToOne
     @JoinTable(name = "author",
             joinColumns = {@JoinColumn(name = "author_id")}, inverseJoinColumns = {
